@@ -33,6 +33,7 @@
 #include "LevelB.h"
 #include "GameWon.h"
 #include "GameLost.h"
+#include "Effects.h"
 
 #include <cstdlib>
 
@@ -58,6 +59,8 @@ LevelA *g_levelA;
 LevelB *g_levelB;
 GameWon *g_won_page;
 GameLost *g_lose_page;
+
+Effects *g_effects;
 
 Scene *g_levels[5];
 
@@ -143,6 +146,9 @@ void initialise()
     g_levels[4] = g_lose_page;
     
     switch_to_scene(g_levels[0]);
+    
+    g_effects = new Effects(g_projection_matrix, g_view_matrix);
+    g_effects->start(FADEIN, 0.5f);
 
 }
 
@@ -239,6 +245,8 @@ void update()
     while (delta_time >= FIXED_TIMESTEP)
     {
         g_current_scene->update(FIXED_TIMESTEP);
+        
+        g_effects->update(FIXED_TIMESTEP);
         //g_is_colliding_bottom = g_current_scene->get_state().player->get_collided_bottom();
         
         delta_time -= FIXED_TIMESTEP;
@@ -278,6 +286,8 @@ void render()
         g_shader_program.set_view_matrix(g_view_matrix);
         g_current_scene->render(&g_shader_program);
     }
+    
+    g_effects->render();
 
     SDL_GL_SwapWindow(g_display_window);
     
@@ -292,6 +302,7 @@ void shutdown()
     delete g_levelB;
     delete g_won_page;
     delete g_lose_page;
+    delete g_effects;
 }
 
 int main(int argc, char* argv[])

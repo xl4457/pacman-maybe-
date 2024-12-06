@@ -10,6 +10,7 @@
 		E129AAB62CEFDCB100951F70 /* GameWon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E129AAB52CEFDCAF00951F70 /* GameWon.cpp */; };
 		E129AABA2CEFE00F00951F70 /* GameLost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E129AAB92CEFE00E00951F70 /* GameLost.cpp */; };
 		E13312F82CB0747100715BBC /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E13312F72CB0746E00715BBC /* Entity.cpp */; };
+		E1700A292D02E7C600CA0515 /* Effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1700A282D02E7C600CA0515 /* Effects.cpp */; };
 		E187B3552CE5C8F900B12589 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E187B3522CE5C8F900B12589 /* Scene.cpp */; };
 		E187B3562CE5C8F900B12589 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E187B3542CE5C8F900B12589 /* Utility.cpp */; };
 		E187B3572CE5C8F900B12589 /* LevelA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E187B3502CE5C8F900B12589 /* LevelA.cpp */; };
@@ -46,6 +47,8 @@
 		E129AAB92CEFE00E00951F70 /* GameLost.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameLost.cpp; sourceTree = "<group>"; };
 		E13312F62CB0746000715BBC /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		E13312F72CB0746E00715BBC /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		E1700A272D02E7C600CA0515 /* Effects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Effects.h; sourceTree = "<group>"; };
+		E1700A282D02E7C600CA0515 /* Effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Effects.cpp; sourceTree = "<group>"; };
 		E187B34F2CE5C8F900B12589 /* LevelA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelA.h; sourceTree = "<group>"; };
 		E187B3502CE5C8F900B12589 /* LevelA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelA.cpp; sourceTree = "<group>"; };
 		E187B3512CE5C8F900B12589 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 		E1F974392C8B8FD30021A367 /* SDLSimple */ = {
 			isa = PBXGroup;
 			children = (
+				E1700A272D02E7C600CA0515 /* Effects.h */,
+				E1700A282D02E7C600CA0515 /* Effects.cpp */,
 				E129AAB42CEFDC9600951F70 /* GameWon.h */,
 				E129AAB52CEFDCAF00951F70 /* GameWon.cpp */,
 				E129AAB82CEFDFFE00951F70 /* GameLost.h */,
@@ -217,6 +222,7 @@
 				E129AAB62CEFDCB100951F70 /* GameWon.cpp in Sources */,
 				E187B3552CE5C8F900B12589 /* Scene.cpp in Sources */,
 				E187B3562CE5C8F900B12589 /* Utility.cpp in Sources */,
+				E1700A292D02E7C600CA0515 /* Effects.cpp in Sources */,
 				E187B3572CE5C8F900B12589 /* LevelA.cpp in Sources */,
 				E1F9743B2C8B8FD30021A367 /* main.cpp in Sources */,
 				E13312F82CB0747100715BBC /* Entity.cpp in Sources */,
