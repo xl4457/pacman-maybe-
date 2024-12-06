@@ -46,8 +46,6 @@ unsigned int LEVEL_A_DATA[] =
 
 LevelA::~LevelA()
 {
-    delete [] m_game_state.player->m_walking;
-    delete [] m_game_state.enemies->m_walking;
     delete [] m_game_state.enemies;
     delete    m_game_state.player;
     delete    m_game_state.map;
@@ -453,7 +451,7 @@ void LevelA::initialise(int lives)
         m_game_state.lives_count[i].set_entity_type(LIVES);
         m_game_state.lives_count[i].set_width(0.8f);
         m_game_state.lives_count[i].set_height(0.8f);
-        m_game_state.lives_count[i].set_position(glm::vec3(24.0f + i, 0.5f, 0.0f));
+        m_game_state.lives_count[i].set_position(glm::vec3(23.5f + i, -21.0f, 0.0f));
         m_game_state.lives_count[i].m_texture_id = lives_texture_id;
     }
     
@@ -594,6 +592,7 @@ void LevelA::render(ShaderProgram *program)
 {
     m_game_state.map->render(program);
     m_game_state.player->render(program);
+
     for (int i = 0; i < ENEMY_COUNT; i++)
     {
         if (m_game_state.enemies[i].get_active_status()) { m_game_state.enemies[i].render(program); }

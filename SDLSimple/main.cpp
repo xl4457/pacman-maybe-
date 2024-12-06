@@ -1,7 +1,7 @@
 /**
 * Author: [Amy Li]
-* Assignment: [Pacman]
-* Date due: [Your presentation date], 2:00pm
+* Assignment: [Pacman..?]
+* Date due: [December 6], 2:00pm
 * I pledge that I have completed this assignment without
 * collaborating with anyone else, in conformance with the
 * NYU School of Engineering Policies and Procedures on
@@ -135,7 +135,7 @@ void initialise()
     g_levelB = new LevelB();
     g_won_page = new GameWon();
     g_lose_page = new GameLost();
-    
+        
     g_levels[0] = g_menu;
     g_levels[1] = g_levelA;
     g_levels[2] = g_levelB;
@@ -143,6 +143,7 @@ void initialise()
     g_levels[4] = g_lose_page;
     
     switch_to_scene(g_levels[0]);
+
 }
 
 void process_input()
@@ -252,6 +253,7 @@ void update()
     {
         switch_to_scene(g_levels[g_current_scene->m_game_state.next_scene_id]);
     }
+
     
 }
 
@@ -261,8 +263,22 @@ void render()
     
     glClear(GL_COLOR_BUFFER_BIT);
     
-    g_current_scene->render(&g_shader_program);
-        
+    if (g_current_scene == g_levelA)
+    {
+        g_shader_program.load("shaders/vertex_lit.glsl", "shaders/fragment_lit.glsl");
+        g_shader_program.set_projection_matrix(g_projection_matrix);
+        g_shader_program.set_view_matrix(g_view_matrix);
+        g_shader_program.set_light_position_matrix(g_levelA->m_game_state.player->get_position());
+        g_current_scene->render(&g_shader_program);
+    }
+    else
+    {
+        g_shader_program.load(V_SHADER_PATH, F_SHADER_PATH);
+        g_shader_program.set_projection_matrix(g_projection_matrix);
+        g_shader_program.set_view_matrix(g_view_matrix);
+        g_current_scene->render(&g_shader_program);
+    }
+
     SDL_GL_SwapWindow(g_display_window);
     
 }

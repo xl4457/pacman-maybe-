@@ -30,8 +30,6 @@ class ShaderProgram {
 
        GLuint m_vertex_shader;
        GLuint m_fragment_shader;
-       GLuint m_key;
-
        
     public:
     
@@ -47,6 +45,5 @@ class ShaderProgram {
         GLuint const get_position_attribute()       const { return m_position_attribute;  };
         GLuint const get_tex_coordinate_attribute() const { return m_tex_coord_attribute; };
         
-        void set_program_id(GLuint program_id)      { m_program_id = program_id;          };
-        void set_key(int key)       { glUseProgram(m_program_id); glUniform1i(m_key, key);};
+        void set_program_id(GLuint program_id)                         { m_program_id = program_id;                   };
 };
